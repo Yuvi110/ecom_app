@@ -7,9 +7,9 @@ import categoryRoute from "./routes/categoryRoute.js";
 import productRoute from "./routes/productRoute.js";
 import cors from "cors";
 import path from "path";
-import {fileURLToPath} from 'url';
+import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url)
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
@@ -30,9 +30,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.use("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 //routes
 app.use("/api/v1/auth", authRoute);
